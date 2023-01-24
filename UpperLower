@@ -1,0 +1,70 @@
+
+
+import java.util.Scanner;
+
+public class Sp2 {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a String");
+		
+		
+		String s1=sc.nextLine();
+		
+		String s2=lowercase(s1);
+		
+		System.out.println(" Lowercase String: "+s2);
+		
+		String s3=uppercase(s1);
+		
+		System.out.println("Uppercase String: "+s3);
+	}
+	
+	public static String uppercase(String str)
+	{
+		
+		char ch[]=str.toCharArray();
+		for (int i = 0; i < ch.length; i++) {
+			
+			if(ch[i]>96 && ch[i]<123)
+			{
+				
+				ch[i]=(char)((int)ch[i]-32);
+				
+			}
+			
+			
+		}
+		
+		String s2=new String(ch);
+		return s2;
+	}
+	
+	public static String lowercase(String str)
+	{
+		
+		char ch[]=new char[str.length()];
+		for (int i = 0; i < ch.length; i++) {
+			
+			if(str.charAt(i)>64 && str.charAt(i)<91)
+			{
+				
+				ch[i]=(char)((int)str.charAt(i)+32);
+				
+			}
+			else
+			{
+				ch[i]=str.charAt(i);
+			}
+			
+			
+		}
+		
+		String s2=new String(ch);
+		return s2;
+	}
+	
+	
+
+}
